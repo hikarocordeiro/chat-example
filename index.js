@@ -17,7 +17,7 @@ io.on('connection', function(socket){
     if(msg == 'd6'){
       dice = Math.floor(Math.random() * (7 - 1)) + 1;
     }
-    io.emit('chat message', '<i class="d6-dice-icon"><img src="https://db.tt/Upbap5C6"/></i>1d6 = '+dice);
+    io.emit('chat message', '<i><img src="https://db.tt/Upbap5C6" class="d6-dice-icon"/></i>1d6 = '+dice);
   });
 });
 
