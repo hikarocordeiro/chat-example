@@ -12,13 +12,13 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 
-  socket.on('roll message', function(msg){
+  /*socket.on('roll message', function(msg){
     var dice = 1;
     if(msg == 'd6'){
       dice = Math.floor(Math.random() * (6 - 1)) + 1;
     }
     io.emit('chat message', '1d6 = '+dice);
-  });
+  });*/
 });
 
 http.listen(port, function(){
