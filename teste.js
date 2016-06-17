@@ -1,5 +1,10 @@
-/**
- * Created by desenv07 on 17/06/16.
- */
+var app = require('express')();
+var http = require('http').Server(app);
 
-console.log('ok... deu certo');
+app.get('/', function(req, res){
+    res.send('<h1>Hello world</h1>');
+});
+
+http.listen(3000, function(){
+    console.log('listening on *:3000');
+});

@@ -1,2 +1,2 @@
 # Procfile
-web: node index.js # Tell Heroku what command to use to run your app.
+web: node teste.js # Tell Heroku what command to use to run your app.
