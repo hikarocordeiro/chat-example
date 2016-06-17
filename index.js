@@ -3,6 +3,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 8080;
 
+process.env.PWD = process.cwd();
+app.set('public', path.join(process.env.PWD, 'public'));
+app.use(express.static(path.join(process.env.PWD, 'public')));
+
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
