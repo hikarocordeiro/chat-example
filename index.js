@@ -15,7 +15,7 @@ io.on('connection', function(socket){
   socket.on('roll message', function(msg){
     var dice = 1;
     if(msg == 'd6'){
-      dice = Math.floor(Math.random() * (6 - 1)) + 1;
+      dice = Math.floor(Math.random() * (7 - 1)) + 1;
     }
     io.emit('chat message', '1d6 = '+dice);
   });
