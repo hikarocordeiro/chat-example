@@ -33,11 +33,11 @@
     socket.emit('chat message', $('#msg').val());
     $('#msg').val('');
     return false;
-  });/*
+  });
    $('#roll').click(function(){
    socket.emit('roll message', 'd6');
    return false;
-   });*/
+   });
   socket.on('chat message', function(msg){
     $('#messages').append($('<li>').text(msg));
   });
