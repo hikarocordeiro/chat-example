@@ -3,9 +3,9 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 8080;
 
-//app.get('/', function(req, res){
-//  res.sendFile(__dirname + '/index.html');
-//});
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+});
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)
