@@ -226,8 +226,8 @@ $(function() {
 
   $dice.click(function(){
     console.log("dice:"+$(this).data("dice"));
+    //socket.emit('roll dice', $(this).data("dice"));
     socket.emit('roll dice', 6);
-    return false;
   });
 
   // Socket events
