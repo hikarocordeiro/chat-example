@@ -11,9 +11,9 @@ app.get('/', function(req, res){
 // * Returns a random integer between min (inclusive) and max (inclusive)
 // * Using Math.round() will give you a non-uniform distribution!
 // */
-//function getRandomInt(min, max) {
-//  return Math.floor(Math.random() * (max - min + 1)) + min;
-//}
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 //
 //io.on('connection', function(socket){
 //  socket.on('chat message', function(msg){
@@ -88,6 +88,15 @@ io.on('connection', function (socket) {
         numUsers: numUsers
       });
     }
+  });
+
+  socket.on('roll dice', function(dice){
+
+    var diceResult = getRandomInt(1, dice);
+    socket.broadcast.emit('new message', {
+      username: socket.username,
+      message: diceResult
+    });
   });
 });
 
