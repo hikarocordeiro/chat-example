@@ -1,11 +1,13 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = process.env.PORT || 8080;
+// Setup basic express server
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('../..')(server);
+var port = process.env.PORT || 3000;
 
-//app.get('/', function(req, res){
-//  res.sendFile(__dirname + '/index.html');
-//});
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
+});
 
 // Routing
 app.use(express.static(__dirname + '/public'));
@@ -70,8 +72,4 @@ io.on('connection', function (socket) {
       });
     }
   });
-});
-
-http.listen(port, function(){
-  console.log('listening on *:3000');
 });
