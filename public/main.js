@@ -224,10 +224,9 @@ $(function() {
     $inputMessage.focus();
   });
 
-  $dice.click(function(){
+  $dice.click(function (){
     console.log("dice:"+$(this).data("dice"));
-    //socket.emit('roll dice', $(this).data("dice"));
-    socket.emit('roll dice', 6);
+    socket.emit('roll dice', $(this).data("dice"));
   });
 
   // Socket events

@@ -91,15 +91,10 @@ io.on('connection', function (socket) {
   });
 
   socket.on('roll dice', function(dice){
-    //var diceResult = getRandomInt(1, dice);
-    //socket.broadcast.emit('roll dice', {
-    //  username: socket.username,
-    //  message: 6
-    //});
-
-    socket.broadcast.emit('new message', {
+    var diceResult = getRandomInt(1, dice);
+    socket.broadcast.emit('roll dice', {
       username: socket.username,
-      message: dice
+      message: diceResult
     });
   });
 });
