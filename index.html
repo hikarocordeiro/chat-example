@@ -39,8 +39,8 @@
   var socket = io();
 
   $('.dice').click(function(){
-    console.log($(this).data('dice'));
-    socket.emit('roll dice', $(this).data('dice'));
+    console.log("dice:"+$(this).data("dice"));
+    socket.emit('roll dice', $(this).data("dice"));
     return false;
   });
 </script>
