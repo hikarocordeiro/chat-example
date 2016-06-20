@@ -29,9 +29,9 @@ $(function() {
   function addParticipantsMessage (data) {
     var message = '';
     if (data.numUsers === 1) {
-      message += "there's 1 participant";
+      message += "Existe 1 participante";
     } else {
-      message += "there are " + data.numUsers + " participants";
+      message += "Existem " + data.numUsers + " participantes";
     }
     log(message);
   }
@@ -77,6 +77,7 @@ $(function() {
 
   // Adds the visual chat message to the message list
   function addChatMessage (data, options) {
+    console.log('aqui');
     // Don't fade the message in if there is an 'X was typing'
     var $typingMessages = getTypingMessages(data);
     options = options || {};
@@ -272,7 +273,11 @@ $(function() {
 
   // Whenever the server emits 'roll dice', roll the dice
   socket.on('roll dice', function (data) {
-    console.log('return');
+    console.log('retorno do servidor'+data);
     addChatMessage(data);
+    addChatMessage({
+      username: username,
+      message: data
+    });
   });
 });
