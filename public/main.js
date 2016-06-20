@@ -77,7 +77,6 @@ $(function() {
 
   // Adds the visual chat message to the message list
   function addChatMessage (data, options) {
-    console.log('aqui');
     // Don't fade the message in if there is an 'X was typing'
     var $typingMessages = getTypingMessages(data);
     options = options || {};
@@ -226,7 +225,6 @@ $(function() {
   });
 
   $dice.click(function (){
-    console.log("dice:"+$(this).data("dice"));
     socket.emit('roll dice', $(this).data("dice"));
   });
 
@@ -273,11 +271,6 @@ $(function() {
 
   // Whenever the server emits 'roll dice', roll the dice
   socket.on('roll dice', function (data) {
-    console.log('retorno do servidor'+data);
     addChatMessage(data);
-    addChatMessage({
-      username: username,
-      message: data
-    });
   });
 });
