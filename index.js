@@ -92,10 +92,10 @@ io.on('connection', function (socket) {
 
   socket.on('roll dice', function(dice){
 console.log('rooll');
-    var diceResult = getRandomInt(1, dice);
+    //var diceResult = getRandomInt(1, dice);
     socket.broadcast.emit('roll dice', {
       username: socket.username,
-      message: diceResult
+      message: 6
     });
   });
 });
