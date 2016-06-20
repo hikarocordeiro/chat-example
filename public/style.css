@@ -147,3 +147,13 @@ ul {
   right: 0;
   width: 100%;
 }
+
+/* navTop */
+
+.navtop {
+  width: 100%;
+  height: 45px;
+  top: 0;
+  position: fixed;
+  background-color: #222222;
+}
