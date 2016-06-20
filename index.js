@@ -7,6 +7,9 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+// make express look in the public directory for assets (css/js/img)
+app.use(express.static(__dirname + '/public'));
+
 ///**
 // * Returns a random integer between min (inclusive) and max (inclusive)
 // * Using Math.round() will give you a non-uniform distribution!
