@@ -94,11 +94,11 @@ io.on('connection', function (socket) {
     var diceResult = getRandomInt(1, dice);
 
     socket.broadcast.emit('roll dice', {
-      username: socket.username,
+      username: socket.username+' :: ROLAGEM DE DADOS :: (d'+dice+')',
         message: diceResult
     });
     socket.emit('roll dice', {
-      username: socket.username,
+      username: socket.username+' :: ROLAGEM DE DADOS :: (d'+dice+')',
       message: diceResult
     });
   });
