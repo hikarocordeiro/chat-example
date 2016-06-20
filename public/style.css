@@ -157,3 +157,17 @@ ul {
   position: fixed;
   background-color: #222222;
 }
+
+.navtop ul {
+  padding:0px;
+  margin: 0px;
+  list-style:none;
+}
+
+.navtop ul li {
+  display: inline;
+}
+
+.dice {
+  border: 1px solid red;
+}
