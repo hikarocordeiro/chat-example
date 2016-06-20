@@ -273,6 +273,7 @@ $(function() {
 
   // Whenever the server emits 'roll dice', roll the dice
   socket.on('roll dice', function (data) {
+    console.log('return');
     addChatMessage(data);
   });
 });
